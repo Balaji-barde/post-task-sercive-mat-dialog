@@ -1,0 +1,32 @@
+
+   <mat-card class="movie-card m-0">
+
+        <img mat-card-image [src]="movie.image" />
+
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+
+        <mat-card-subtitle class="m-0 p-0">
+          {{ movie.genre }} | {{ movie.releaseYear }}
+        </mat-card-subtitle>
+
+        <mat-card-content class="m-0 p-0">
+          <p><strong>Rating:</strong> {{ movie.rating }}</p>
+          <p>
+            <strong class="m-0 p-0">Status:</strong>
+            <span [ngClass]="movie.isActive ? 'text-success' : 'text-danger'">
+              {{ movie.isActive ? 'Active' : 'Inactive' }}
+            </span>
+          </p>
+        </mat-card-content>
+
+        <mat-card-actions class="m-0 p-0">
+          <button (click)="onEdit()" mat-mini-fab color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button  (click)="onRemove()" mat-mini-fab color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+
+      </mat-card>
